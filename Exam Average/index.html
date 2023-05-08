@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam Average</title>
+  </head>
+  <body>
+    <h1>Javascript Exam Average</h1>
+    <label for="exam1">Exam 1</label>
+    <input type="number" id="exam1" />
+    <br />
+    <label for="exam2">Exam 2</label>
+    <input type="number" id="exam2" />
+    <br />
+    <label for="exam3">Exam 3</label>
+    <input type="number" id="exam3" />
+    <button id="click">click</button>
+    <div id="result">Result:</div>
+    <script>
+      const calculation = () => {
+        let number1 = Number(document.getElementById("exam1").value);
+        let number2 = Number(document.getElementById("exam2").value);
+        let number3 = Number(document.getElementById("exam3").value);
+        let result = number1 + number2 + number3 / 3;
+        if (result > 50) {
+          document.getElementById(
+            "result"
+          ).innerHTML = `Average:${result} You passed`;
+        } else {
+          document.getElementById(
+            "result"
+          ).innerHTML = `Average:${result} you stayed`;
+        }
+      };
+
+      const click = document.getElementById("click");
+      click.onclick = calculation;
+    </script>
+  </body>
+</html>
