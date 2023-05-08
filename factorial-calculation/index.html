@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factorial Calculation</title>
+  </head>
+  <body>
+    <h1>javascript factorial-calculation</h1>
+    <label for="number">Number:</label>
+    <input type="number" id="number" />
+    <button id="onclick">Click</button>
+    <div id="result">Result:</div>
+    <script>
+      const calculation = () => {
+        let factorial = 1;
+        let number = document.getElementById("number").value;
+        number = Number(number);
+
+        if (number > 0) {
+          for (let i = 1; i <= number; i++) {
+            factorial *= i;
+          }
+        } else {
+          alert("Number must be minimum 1");
+        }
+        document.getElementById("result").innerHTML =
+          number > 0 ? factorial : "";
+      };
+      const calculationBtn = document.getElementById("onclick");
+      calculationBtn.onclick = calculation;
+    </script>
+  </body>
+</html>
