@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Grade Point Average Calculation</title>
+  </head>
+  <body>
+    <h1>University Grade Point Average Calculation</h1>
+    <br />
+    <label for="exam1">entrance fee to the exam</label>
+    <br />
+    <input type="number" id="exam1" />
+    <br />
+    <label for="exam2">exam score</label>
+    <br />
+    <input type="number" id="exam2" />
+    <button id="click">click</button>
+    <div id="result">Result:</div>
+    <script>
+      let onClick = () => {
+        let exam1 = Number(document.getElementById("exam1").value);
+        let exam2 = Number(document.getElementById("exam2").value);
+        if (exam1 < 0 || exam1 > 50) {
+          alert("Please enter number between 0 and 50");
+        } else if (exam2 < 0 || exam2 > 50) {
+          alert("Please enter number between 0 and 50");
+        }
+
+        let result = exam1 + exam2;
+        let innerHTML;
+        if (result < 51) {
+          innerHTML = "F";
+        } else if (result > 50 && result < 61) {
+          innerHTML = "E";
+        } else if (result > 60 && result < 71) {
+          innerHTML = "D";
+        } else if (result > 70 && result < 81) {
+          innerHTML = "C";
+        } else if (result > 80 && result < 91) {
+          innerHTML = "B";
+        } else if (result > 90 && result < 101) {
+          innerHTML = "A";
+        }
+        reuslt ? (document.getElementById("result").innerHTML = innerHTML) : "";
+      };
+
+      const click = document.getElementById("click");
+      click.onclick = onClick;
+    </script>
+  </body>
+</html>
